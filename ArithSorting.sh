@@ -49,3 +49,28 @@ do
 done
 
 echo "Sorted_descending: ${calcArr[@]}"
+
+k=0
+
+for (( i=0; i<(${#calcArr[@]}-1); i++ ))
+do
+
+        min=$i
+        for (( j=($i+1); j<${#calcArr[@]}; j++ ))
+        do
+                flag=`awk "BEGIN { print ( ${calcArr[$j]} < ${calcArr[$min]} )? "1" : "0" }"`
+
+                if [ $flag -eq 1 ]
+                then
+                        min=$j
+                fi
+        done
+
+        temp="${calcArr[$k]}"
+        calcArr[k]="${calcArr[$min]}"
+        calcArr[$min]=$temp
+        ((k++))
+
+done
+
+echo "Sorted_ascending: ${calcArr[@]}"
