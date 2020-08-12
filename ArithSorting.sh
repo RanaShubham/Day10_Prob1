@@ -13,3 +13,5 @@ awk "BEGIN {print ${a}+${b}*$c}"
 awk "BEGIN {print $a*$b+$c}"
 
 awk "BEGIN {print $c + $a/$b}"
+
+awk "BEGIN {print $a%$b + $c}"
