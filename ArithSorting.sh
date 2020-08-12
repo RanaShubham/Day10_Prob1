@@ -11,3 +11,5 @@ read -p "Enter one last number: " c
 awk "BEGIN {print ${a}+${b}*$c}"
 
 awk "BEGIN {print $a*$b+$c}"
+
+awk "BEGIN {print $c + $a/$b}"
