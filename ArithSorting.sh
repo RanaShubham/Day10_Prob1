@@ -3,6 +3,8 @@
 echo "Welcome to Arithmetic computation and sorting Program"
 
 declare -A calc
+declare -a calcArr
+i=0
 
 read -p "Enter a number: " a
 read -p "Enter another number: " b
@@ -16,4 +18,7 @@ calc["calc3"]=`awk "BEGIN {print $c + $a/$b}"`
 
 calc["calc4"]=`awk "BEGIN {print $a%$b + $c}"`
 
-echo "${calc[@]}"
+for num in "${calc[@]}"
+do
+	calcArr[ ((i++)) ]=$num
+done
