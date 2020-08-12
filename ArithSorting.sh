@@ -9,3 +9,5 @@ read -p "Enter another number: " b
 read -p "Enter one last number: " c
 
 awk "BEGIN {print ${a}+${b}*$c}"
+
+awk "BEGIN {print $a*$b+$c}"
